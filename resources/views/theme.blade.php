@@ -2,16 +2,26 @@
   <head>
     <title>{{ $data->title }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @vite('resources/css/app.css')
   </head>
 
   <body class="font-montserrat w-full h-auto min-h-screen flex flex-col">
+  <audio id="background-audio" autoplay loop>
+        <source src="{{ asset('audio/hymne.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <!-- Main Section -->
     <section class="w-full h-screen flex flex-col items-center justify-center text-white bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url('{{ $data->main_image }}');">
       <div class="bg-black bg-opacity-50 w-full h-screen absolute">
       </div>
 
-      <div class="z-10 flex flex-col items-center">
+      <div class="z-10 flex flex-col items-center"
+     data-aos="fade-in" 
+     data-aos-duration="1200"  
+     data-aos-easing="ease-in-out" 
+     data-aos-delay="200" 
+     data-aos-offset="200">
         <span class="font-berkshire mt-5 text-6xl">Silaturahmi Akbar & Pelantikan Pengurus</span>
         <span class="uppercase font-extralight text-2xl">HMI Komisariat IT Telkom Masa Juang 2024-2025</span>
         <span class="font-extralight text-2xl mt-5">{{ formatDate($data->wedding_date, 'l, F jS Y') }}</span>
@@ -20,7 +30,13 @@
     <!-- ./Main Section -->
 
     <!-- Profile Section -->
-    <section class="w-full h-auto bg-white flex flex-col items-center p-10 bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('images/theme_01_bg_profile.webp') }})">
+    <section 
+     data-aos="fade-up" 
+     data-aos-duration="1200"  
+     data-aos-easing="ease-in-out" 
+     data-aos-delay="200" 
+     data-aos-offset="200"
+     class="w-full h-auto bg-white flex flex-col items-center p-10 bg-fixed bg-cover bg-no-repeat bg-center" data-aos="fade-in" style="background-image: url({{ asset('images/theme_01_bg_profile.webp') }})">
       <img src="{{ asset('images/bismillah.webp') }}" alt='Bismillah' class="w-1/4 mt-5" />
       <span class="font-light text-xl mt-8">Assalamu'alaikum Warrahmatullahi Wabarakatuh</span>
       <span class="font-light text-xl mt-4">Dengan Hormat Kami Mengundang Kanda/Yunda: </span>
@@ -46,20 +62,32 @@
           <div class="bg-black bg-opacity-75 w-full h-96 absolute rounded-t-[100px] z-0">
           </div>
 
-          <div class="flex flex-col w-full h-full text-white z-20 items-center justify-center gap-8">
-            <span class="font-light text-7xl">Countdown</span>
-            <span class="font-light text-6xl">{{ countdown($data->wedding_date) }} days</span>
+          <div 
+          data-aos="fade-up" 
+          data-aos-duration="1200"  
+          data-aos-easing="ease-in-out" 
+          data-aos-delay="200" 
+          data-aos-offset="200"
+          class="flex flex-col w-full h-full text-white z-20 items-center justify-center gap-8">
+            <span class="font-bold text-7xl">Countdown</span>
+            <span class="font-bold text-6xl">{{ countdown($data->wedding_date) }} days</span>
           </div>
         </div>
         <!-- ./Countdown -->
 
         <!-- Akad -->
-        <div class="flex flex-col py-20 items-center">
+        <div 
+          data-aos="fade-up" 
+          data-aos-duration="1200"  
+          data-aos-easing="ease-in-out" 
+          data-aos-delay="200" 
+          data-aos-offset="200"
+        class="flex flex-col py-20 items-center">
           <span class="font-extralight text-4xl">Waktu & Tempat Pelaksanaan</span>
           <span class="font-medium text-4xl mt-4">Sabtu, 14 September 2024</span>
           <span class="font-medium text-4xl mt-4">13.00 WIB - Selesai</span>
-          <span class="font-extralight text-xl mt-4">{{ $data->akad_place_name }}</span>
-          <span class="font-extralight text-xl mt-4">{{ $data->akad_address }}</span>
+          <span class="font-light text-xl mt-4">{{ $data->akad_place_name }}</span>
+          <span class="font-light text-xl mt-4">{{ $data->akad_address }}</span>
           <a href="{{ $data->akad_maps }}" target="_blank" class="font-light text-lg mt-4 bg-slate-500 rounded-md text-white px-3 py-1 hover:scale-110 duration-300">See Location</a>
         </div>
         <!-- ./Akad -->
@@ -72,7 +100,13 @@
     <!-- Journey Section -->
     @if(count($data->journey) > 0)
     <section class="w-full h-auto min-h-screen flex flex-col px-10 py-20 bg-fixed bg-cover bg-no-repeat bg-center items-center" style="background-image: url({{ asset('images/theme_01_bg_profile.webp') }})">
-      <span class="font-berkshire text-6xl">Rencana Perjalanan Kami</span>
+      <span 
+          data-aos="fade-up" 
+          data-aos-duration="1200"  
+          data-aos-easing="ease-in-out" 
+          data-aos-delay="200" 
+          data-aos-offset="200"
+      class="font-berkshire text-6xl">Rencana Perjalanan Kami</span>
       
       <div class="flex flex-col px-10 mt-10 items-center w-full font-light">
         <div class="w-5 h-5 rounded-full bg-slate-500"></div>
@@ -81,25 +115,49 @@
         @foreach($data->journey as $key => $item)
           <div class="flex flex-row w-full justify-center">
             @if($key % 2 == 0)
-              <div class="w-1/3 text-end text-xl font-medium">
+              <div 
+              data-aos="fade-right" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+              class="w-1/3 text-end text-xl font-medium">
                 {{ formatDate($item['date'], 'M Y') }}
               </div>
               
               <div class="w-1 min-w-1 h-auto bg-slate-500 mx-5"></div>
               
-              <div class="w-1/3 h-fit text-xl bg-white flex flex-col rounded-md p-5 mb-10 -mt-5">
+              <div 
+              data-aos="fade-left" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+              class="w-1/3 h-fit text-xl bg-white flex flex-col rounded-md p-5 mb-10 -mt-5">
                 <span class="font-medium">{{ $item['title'] }}</span>
                 <span>{{ $item['story'] }}</span>
               </div>
             @else
-              <div class="w-1/3 h-fit text-xl bg-white flex flex-col rounded-md p-5 mb-10 -mt-5">
+              <div 
+              data-aos="fade-right" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+              class="w-1/3 h-fit text-xl bg-white flex flex-col rounded-md p-5 mb-10 -mt-5">
                 <span class="font-medium">{{ $item['title'] }}</span>
                 <span>{{ $item['story'] }}</span>
               </div>
               
               <div class="w-1 min-w-1 h-auto bg-slate-500 mx-5"></div>
 
-              <div class="w-1/3 text-xl font-medium">
+              <div 
+              data-aos="fade-left" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+              class="w-1/3 text-xl font-medium">
                 {{ formatDate($item['date'], 'M Y') }}
               </div>
             @endif
@@ -115,7 +173,13 @@
     <!-- Gallery Section -->
     @if(count($data->gallery) > 0)
     <section class="w-full h-auto min-h-screen flex flex-col px-10 py-20 bg-fixed bg-cover bg-no-repeat bg-center items-center" style="background-image: url({{ asset('images/theme_01_bg_profile.webp') }})">
-      <span class="font-berkshire text-6xl">Galery Komisariat</span>
+      <span 
+      data-aos="fade-down" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+      class="font-berkshire text-6xl">Galery Komisariat</span>
       
       <div
         @class([
@@ -126,7 +190,13 @@
         ])>
         @foreach($data->gallery as $item)
           <div class="w-full group overflow-hidden">
-            <img src="{{ $item['link'] }}" alt="Gallery Item" class="group-hover:scale-110 duration-300"/>
+            <img src="{{ $item['link'] }}" alt="Gallery Item" class="group-hover:scale-110 duration-300" 
+              data-aos="fade-down" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+            />
           </div>
         @endforeach
       </div>
@@ -135,11 +205,23 @@
     <!-- ./Gallery Section -->
 
     <!-- Doa Section -->
-    <section class="w-full h-screen bg-white flex flex-col items-center bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('images/theme_01_bg_doa.webp') }})">
+    <section 
+    data-aos="fade-in" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+    class="w-full h-screen bg-white flex flex-col items-center bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('images/theme_01_bg_doa.webp') }})">
       <div class="bg-white bg-opacity-90 w-full h-screen absolute">
       </div>  
       
-      <div class="z-10 flex flex-col w-2/3 h-full items-center justify-center">
+      <div 
+      data-aos="fade-down" 
+              data-aos-duration="1200"  
+              data-aos-easing="ease-in-out" 
+              data-aos-delay="200" 
+              data-aos-offset="200"
+      class="z-10 flex flex-col w-2/3 h-full items-center justify-center">
         <img src="{{ asset('images/quran.jpg') }}" alt='Doa' class="w-fit" />
 
         <span class="text-xl font-light text-center italic tracking-wider mt-5">innallâha ya’murukum an tu’addul-amânâti ilâ ahlihâ wa idzâ ḫakamtum bainan-nâsi an taḫkumû bil-‘adl, innallâha ni‘immâ ya‘idhukum bih, innallâha kâna samî‘am bashîrâ</span>
@@ -196,5 +278,11 @@
       </span>
     </div>
     <!-- ./Footer Section -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    
   </body>
 </html>
