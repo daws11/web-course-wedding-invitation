@@ -9,24 +9,13 @@ class PageController extends Controller
 {
     public function index(){
         $data = [
-            "title" => "Wedding of Name1 & Name2",
-            "main_image" => "https://ik.imagekit.io/b3amk7ihm/1707558835394.webp",
-            "wedding_date" => "2025-02-26 00:00:00",
-            "groom_name" => "Groom Name",
-            "bride_name" => "Bride Name",
+            "title" => "Silaturahmi Akbar & Pelantikan",
+            "main_image" => "images/pelantikan_2.jpeg",
+            "wedding_date" => "2024-09-14 13:00:00",
             "groom_photo" => "https://placehold.co/300?text=Groom+Photo",
-            "bride_photo" => "https://placehold.co/300?text=Bride+Photo",
-            "groom_father_name" => "groom_father_name",
-            "groom_mother_name" => "groom_mother_name",
-            "bride_father_name" => "bride_father_name",
-            "bride_mother_name" => "bride_mother_name",
-            "groom_social_media" => "https://instagram.com/erfrandarmawan",
-            "bride_social_media" => "https://instagram.com/erfrandarmawan",
-            "akad_start_date" => "2025-02-26 10:00:00",
-            "akad_end_date" => "2025-02-26 11:00:00",
-            "akad_place_name" => "Gedung ABC",
-            "akad_address" => "Jl. 12345",
-            "akad_maps" => "https://maps.google.com",
+            "akad_place_name" => "Graha HMI Cabang Bandung",
+            "akad_address" => "Jl.Sabang No.17,Cihapit, Kec.Bandung Wetan, Kota Bandung",
+            "akad_maps" => "https://maps.app.goo.gl/K95VR2m3VifEq8SUA",
             "reception_start_date" => "2025-02-26 13:00:00",
             "reception_end_date" => "2025-02-26 15:00:00",
             "reception_place_name" => "Gedung XYZ",
@@ -34,37 +23,51 @@ class PageController extends Controller
             "reception_maps" => "https://maps.google.com",
             "gift_qr_image" => "https://placehold.co/300?text=QR+Image",
             "gallery" => [
-                ["link" => "https://placehold.co/300?text=Gallery 1"],
-                ["link" => "https://placehold.co/300?text=Gallery 2"],
-                ["link" => "https://placehold.co/300?text=Gallery 3"],
-                ["link" => "https://placehold.co/300?text=Gallery 4"],
-                ["link" => "https://placehold.co/300?text=Gallery 5"],
+                
+                ["link" => "images/3.jpeg"],
+                ["link" => "images/4.jpeg"],
+                ["link" => "images/5.jpeg"],
+                ["link" => "images/6.jpeg"],               
+                ["link" => "images/10.jpeg"],               
+                ["link" => "images/12.jpeg"],
+                ["link" => "images/pelantikan_1.jpeg"],
+                ["link" => "images/pelantikan_2.jpeg"],
+                ["link" => "images/13.jpeg"],
+                ["link" => "images/14.jpeg"],
+                ["link" => "images/15.jpeg"],
+                ["link" => "images/7.jpeg"],
+                ["link" => "images/9.jpeg"],
+                ["link" => "images/11.jpeg"],
+                ["link" => "images/16.jpeg"],
+                ["link" => "images/1.jpeg"],
+                ["link" => "images/2.jpeg"],
+                ["link" => "images/17.jpeg"]
             ],
             "journey" => [
                 [
-                    "title" => "Title 1",
-                    "story" => "Story 1",
-                    "date" => "2020-07-10 00:00:00"
+                    "title" => "Pelantikan dan Silaturahmi Akbar",
+                    "story" => "Pelantikan Pengurus masa juang 2024 - 2025 dan Silaturahmi Almuni Komisariat IT Telkom yang dilaksanakan di Graha HMI Cabang Banddung pada Sabtu 14 September 2024",
+                    "date" => "2024-09-14 00:00:00"
                 ],
                 [
-                    "title" => "Title 2",
-                    "story" => "Story 2",
-                    "date" => "2021-08-01 00:00:00"
+                    "title" => "Rapat Kerja",
+                    "story" => "Rapat Kerja Pengurus HMI Komisariat IT Telkom masa juang 2024 - 2025 untuk merancang program kerja selama berjalannya kepengurusan Insya Allah akan dilaksanakan pada tanggal 21 - 22 September 2024",
+                    "date" => "2024-09-21 00:00:00"
                 ],
                 [
-                    "title" => "Title 3",
-                    "story" => "Story 3",
-                    "date" => "2021-09-15 00:00:00"
+                    "title" => "Latihan Kader I",
+                    "story" => "Latihan Kader I akan dilaksan untuk menjalankan amanat konstitusi dan melanjuutkan perkaderan yang Insya Allah akan dilakasanakan pada 11 - 13 Oktober 2024",
+                    "date" => "2024-10-15 00:00:00"
                 ],
                 [
-                    "title" => "Title 4",
-                    "story" => "Story 4",
-                    "date" => "2022-05-11 00:00:00"
+                    "title" => "Upgrading Pengurus",
+                    "story" => "Upgrading Pengurus untuk menambah rasa semangat pengurus dalam menjankan amanah yang Insya Allah akan dilaksanakan pada 26 Oktober 2024",
+                    "date" => "2024-10-11 00:00:00"
                 ],
                 [
-                    "title" => "Title 5",
-                    "story" => "Story 5",
-                    "date" => "2023-07-21 00:00:00"
+                    "title" => "Pengenalan Bidang (Pejuang Muda)",
+                    "story" => "Pengenealan bidang - bidang yang ada pada komisariat kepada kader baru sekaligus pendaftaran Pejuang Muda yang Insya Allah Akan Dilaksanakan pada November 2024 ",
+                    "date" => "2024-11-21 00:00:00"
                 ]
             ]
         ];
