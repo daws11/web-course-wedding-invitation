@@ -121,6 +121,74 @@
                 {{ $responses->links() }}
             </div>
         </div>
+
+        <div class="mb-10">
+    <h2 class="text-2xl font-semibold mb-4">Ormawa Guests</h2>
+
+<!-- Add Ormawa Guest Form -->
+<form action="{{ route('admin.ormawa.guests.store') }}" method="POST" class="mb-6">
+    @csrf
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input type="text" name="name" placeholder="Ormawa Guest Name" class="border p-3 rounded w-full" required>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full sm:w-auto">Add Ormawa Guest</button>
     </div>
+</form>
+
+<form action="{{ route('admin.ormawa.guests.bulkUpload') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="flex gap-4">
+        <input type="file" name="csv_file" accept=".csv" class="border p-3 rounded w-full" required>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Upload CSV</button>
+    </div>
+</form>
+
+
+<!-- Ormawa Guests Table -->
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white rounded-lg shadow-md">
+        <thead>
+            <tr class="bg-gray-800 text-white">
+                <th class="py-2 px-4 text-left">Name</th>
+                <th class="py-2 px-4 text-left">Slug</th>
+                <th class="py-2 px-4 text-left">URL</th>
+                <th class="py-2 px-4 text-left">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($ormawaGuests as $guest)
+            <tr class="border-b hover:bg-gray-100">
+                <td class="py-2 px-4">{{ $guest->name }}</td>
+                <td class="py-2 px-4">{{ $guest->slug }}</td>
+                <td class="py-2 px-4">
+                    <a href="{{ url('ormawa/'.$guest->slug) }}" target="_blank" class="text-blue-500 underline break-words">
+                        {{ url('ormawa/'.$guest->slug) }}
+                    </a>
+                </td>
+                <td class="py-2 px-4 flex items-center space-x-2">
+                    <button onclick="copyLink('{{ url('ormawa/'.$guest->slug) }}')" class="text-green-500">
+                        <i class="fas fa-copy"></i> Copy Link
+                    </button>
+                    <form action="{{ route('admin.ormawa.guests.delete', $guest->id) }}" method="POST" class="inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+    </div>
+
+
+
+
+<div class="mt-4">
+    {{ $ormawaGuests->links() }}
+</div>
+
 </body>
 </html>

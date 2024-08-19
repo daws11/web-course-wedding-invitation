@@ -63,7 +63,7 @@
 
 
     <!-- Wedding Information Section -->
-    <section class="w-full h-auto min-h-screen flex flex-col px-6 sm:px-10 py-20 bg-fixed bg-cover bg-no-repeat bg-center items-center" style="background-image: url({{ asset('images/theme_01_bg_info.webp') }})">
+    <section class="w-full h-auto min-h-screen flex flex-col px-6 sm:px-10 py-20 bg-fixed bg-cover bg-no-repeat bg-center items-center" style="background-image: url({{ asset('images/graha.jpeg') }})">
       <div class="w-full sm:w-3/4 lg:w-2/3 h-auto bg-white flex flex-col rounded-[50px] sm:rounded-[80px] lg:rounded-[100px] overflow-hidden">
         <!-- Countdown -->
         <div class="flex flex-col h-72 sm:h-80 md:h-96 relative bg-cover bg-no-repeat" style="background-image: url('{{ $data->main_image }}');">
