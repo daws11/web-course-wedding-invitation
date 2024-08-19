@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index(){
+    public function index($slug = null){
         $data = [
             "title" => "Silaturahmi Akbar & Pelantikan",
             "main_image" => "images/pelantikan_2.jpeg",
@@ -73,7 +74,20 @@ class PageController extends Controller
         ];
 
         $data["comments"] = Comment::all()->sortByDesc('created_at');
-        
-        return view('theme', ['data' => (object) $data]);
+
+        $guest = null;
+        if ($slug) {
+            $guest = Guest::where('slug', $slug)->firstOrFail();
+    
+            // Validate if the name is null or empty
+            if (is_null($guest->name) || trim($guest->name) === '') {
+                $guest->name = 'Senior HMI IT Telkom';
+            }
+    
+            $data['guest'] = $guest;
+        }
+    
+        // Return the view with the data and the guest
+        return view('theme', ['data' => (object)$data, 'guest' => $guest]);
     }
 }
