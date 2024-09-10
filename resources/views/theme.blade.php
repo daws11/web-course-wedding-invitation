@@ -239,24 +239,24 @@
 
 
     <!-- Comment Section -->
-    <section class="w-full h-auto min-h-screen flex flex-col items-center px-4 sm:px-10 py-20 text-black bg-fixed bg-cover bg-no-repeat bg-center font-light" style="background-image: url('{{ asset('images/theme_01_bg_comments.webp') }}');">
+    <section id="Konfirmasi-Kehadiran" class="w-full h-auto min-h-screen flex flex-col items-center px-4 sm:px-10 py-20 text-black bg-fixed bg-cover bg-no-repeat bg-center font-light" style="background-image: url('{{ asset('images/theme_01_bg_comments.webp') }}');">
 
     <!-- QR Image -->
-    <div class="flex flex-col py-10 sm:py-20 px-6 sm:px-28 items-center text-center"
+    <!-- <div class="flex flex-col py-10 sm:py-20 px-6 sm:px-28 items-center text-center"
     data-aos="fade-down" 
           data-aos-duration="1200"  
           data-aos-easing="ease-in-out" 
           data-aos-delay="200" 
           data-aos-offset="200"
     >
-      <span class="font-light text-lg sm:text-xl md:text-2xl mt-5">Demi kelancaran acara ini, kami mohon kesediaan kanda/yunda untuk memberikan kontribusi sebesar min. Rp50.000,- sebagai biaya yang nantinya akan di alokasikan untuk kelancaran acara Silaturahmi Akbar dan Pelantikan</span>
+      <span class="font-light text-lg sm:text-xl md:text-2xl mt-5">Demi kelancaran acara ini, kami mohon kesediaan kanda/yunda untuk memberikan kontribusi sebagai biaya yang nantinya akan di alokasikan untuk kelancaran acara Silaturahmi Akbar dan Pelantikan</span>
       <span class="font-medium text-lg sm:text-xl md:text-2xl mt-10">Bank Mandiri 1570011595841 a/n MUHAMAD OMAR DHANI</span>
     <a href="https://drive.google.com/file/d/1jO1wdXpiSSObENbsMI-9mGgDWhnzDvGN/view?usp=sharing" target="_blank">
       <button type="button" class="mt-10 bg-develobe-500 w-fit mx-auto px-5 py-3 rounded-md text-white font-normal hover:scale-110 duration-300 drop-shadow-md">
           Lihat Proposal
       </button>
     </a>
-    </div>
+    </div> -->
 
     <!-- ./QR Image -->
     <span class="text-lg sm:text-xl md:text-2xl text-center">Konfirmasi Kehadiran</span>
@@ -264,25 +264,25 @@
     <form action="/send-comment" method="POST" enctype="multipart/form-data" class="flex flex-col w-full sm:w-3/4 md:w-1/2 mt-10 px-4 sm:px-0">
     @csrf
     <label for="name" class="text-lg sm:text-xl">Nama</label>
-    <input id="name" name="name" type="text" maxlength="50" placeholder="Nama Tamu" class="p-3 outline-none rounded-md mt-2 drop-shadow-md" value="{{ $guest->name ?? '' }}" {{ $guest ? 'readonly' : '' }} required/>
+    <input id="name" name="name" type="text" maxlength="50" placeholder="Nama kanda/yunda " class="p-3 outline-none rounded-md mt-2 drop-shadow-md" value="{{ $guest->name ?? '' }}" {{ $guest ? 'readonly' : '' }} required/>
 
     <label for="whatsapp" class="text-lg sm:text-xl mt-5">Nomor Whatsapp</label>
     <input id="whatsapp" name="whatsapp" type="text" maxlength="50" placeholder="Nomor whatsapp yang bisa dihubungi" class="p-3 outline-none rounded-md mt-2 drop-shadow-md" required/>
 
-    <label for="bukti_transfer" class="text-lg sm:text-xl mt-5">Bukti Transfer</label>
-    <input id="bukti_transfer" name="bukti_transfer" type="file" accept="image/*" class="p-3 outline-none rounded-md mt-2 drop-shadow-md">
+    <!-- <label for="bukti_transfer" class="text-lg sm:text-xl mt-5">Bukti Transfer</label>
+    <input id="bukti_transfer" name="bukti_transfer" type="file" accept="image/*" class="p-3 outline-none rounded-md mt-2 drop-shadow-md"> -->
 
     <label for="angkatan" class="text-lg sm:text-xl mt-5">Angkatan</label>
     <input id="angkatan" name="angkatan" type="text" maxlength="50" placeholder="Tahun angkatan kanda/yunda semasa kuliah" class="p-3 outline-none rounded-md mt-2 drop-shadow-md" required/>
 
-    <label for="jurusan" class="text-lg sm:text-xl mt-5">Jurusan</label>
-    <input id="jurusan" name="jurusan" type="text" maxlength="50" placeholder="Jurusan kanda/yunda selama kuliah" class="p-3 outline-none rounded-md mt-2 drop-shadow-md" required/>
+    <!-- <label for="jurusan" class="text-lg sm:text-xl mt-5">Jurusan</label>
+    <input id="jurusan" name="jurusan" type="text" maxlength="50" placeholder="Jurusan kanda/yunda selama kuliah" class="p-3 outline-none rounded-md mt-2 drop-shadow-md" required/> -->
 
     <label for="kota_domisili" class="text-lg sm:text-xl mt-5">Kota Domisili</label>
     <input id="kota_domisili" name="kota_domisili" type="text" maxlength="50" placeholder="Kota domisili kanda/yunda saat ini" class="p-3 outline-none rounded-md mt-2 drop-shadow-md" required/>
 
     <label for="comment" class="text-lg sm:text-xl mt-5">Pesan dan Kesan</label>
-    <textarea id="comment" name="comment" rows="5" maxlength="500" class="p-3 outline-none rounded-md mt-2 resize-none drop-shadow-md" placeholder="Pesan Anda" required></textarea>
+    <textarea id="comment" name="comment" rows="5" maxlength="500" class="p-3 outline-none rounded-md mt-2 resize-none drop-shadow-md" placeholder="Pesan dan kesan kanda/yunda selama ber-HMI di komisariat it telkom" required></textarea>
 
     <button type="submit" class="mt-10 bg-develobe-500 w-fit mx-auto px-5 py-3 rounded-md text-white font-normal hover:scale-110 duration-300 drop-shadow-md">Kirim Ucapan</button>
     </form>
